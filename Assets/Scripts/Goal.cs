@@ -10,7 +10,14 @@ public class Goal : MonoBehaviour
         if( collision.gameObject.tag == "Player" )
         {
             OnTouchEvent.Invoke();
-            Debug.Log("Touched Trophy!");
+        }
+    }
+
+    private void OnTriggerEnter2D( Collider2D collision )
+    {
+        if( collision.gameObject.tag == "Player" )
+        {
+            OnTouchEvent.Invoke();
         }
     }
 }
