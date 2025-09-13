@@ -1,0 +1,12 @@
+﻿1
+00:00:00,001 --> 00:00:01,452
+Here, check this level out!
+
+2
+00:00:01,752 --> 00:00:03,053
+I made it super hard,
+
+3
+00:00:03,078 --> 00:00:04,173
+just give it a try!
+

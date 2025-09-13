@@ -1,0 +1,8 @@
+﻿1
+00:00:00,001 --> 00:00:01,301
+This is way cooler than a
+
+2
+00:00:01,326 --> 00:00:02,714
+western if you ask me!
+
