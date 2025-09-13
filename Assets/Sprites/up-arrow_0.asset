@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: up-arrow
+  m_Name: up-arrow_0
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: -2615874204119335, guid: 4e0064ba053d24f4d8bfd317a5cd1beb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
