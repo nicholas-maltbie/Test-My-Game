@@ -2766,10 +2766,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 2701804482765798795, guid: 8da46c0e80fedd74a87947fa026937ec, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5512751468853307074, guid: 8da46c0e80fedd74a87947fa026937ec, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2850,9 +2846,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6102176100941548038, guid: 8da46c0e80fedd74a87947fa026937ec, type: 3}
+      propertyPath: m_Color.a
+      value: 0.84705883
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102176100941548038, guid: 8da46c0e80fedd74a87947fa026937ec, type: 3}
+      propertyPath: m_Color.b
+      value: 0.33962262
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102176100941548038, guid: 8da46c0e80fedd74a87947fa026937ec, type: 3}
+      propertyPath: m_Color.g
+      value: 0.33962262
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102176100941548038, guid: 8da46c0e80fedd74a87947fa026937ec, type: 3}
+      propertyPath: m_Color.r
+      value: 0.33962262
+      objectReference: {fileID: 0}
     - target: {fileID: 8281021744870662559, guid: 8da46c0e80fedd74a87947fa026937ec, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 306.74414
+      value: 521.0697
       objectReference: {fileID: 0}
     - target: {fileID: 8281021744870662559, guid: 8da46c0e80fedd74a87947fa026937ec, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2860,15 +2872,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8281021744870662559, guid: 8da46c0e80fedd74a87947fa026937ec, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 0.000045776367
       objectReference: {fileID: 0}
     - target: {fileID: 8281021744870662559, guid: 8da46c0e80fedd74a87947fa026937ec, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8846832233263324967, guid: 8da46c0e80fedd74a87947fa026937ec, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 0
+      value: -29.890625
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

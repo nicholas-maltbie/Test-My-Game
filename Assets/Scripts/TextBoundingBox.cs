@@ -3,23 +3,18 @@ using TMPro;
 using UnityEngine.UI;
 
 [ExecuteInEditMode]
-[RequireComponent(typeof(TMP_Text))]
 public class TextBoundingBox : MonoBehaviour
 {
     [SerializeField]
     private Image backgroundBox;
 
     [SerializeField]
-    private Vector2 margin = new Vector2(10, 10);
-
     private TMP_Text textComponent;
 
-    public string CurrentText => this.textComponent.text;
+    [SerializeField]
+    private Vector2 margin = new Vector2(10, 10);
 
-    public void Awake()
-    {
-        this.textComponent = GetComponent<TMP_Text>();
-    }
+    public string CurrentText => this.textComponent.text;
 
     public void LateUpdate()
     {
@@ -28,7 +23,7 @@ public class TextBoundingBox : MonoBehaviour
 
         if (backgroundBox != null)
         {
-            this.backgroundBox.transform.position = transform.position + textBounds.center;
+            this.backgroundBox.rectTransform.localPosition = this.textComponent.rectTransform.localPosition + textBounds.center;
             this.backgroundBox.rectTransform.sizeDelta = targetSize;
 
             bool targetActiveState = this.textComponent.text.Trim().Length > 0;
