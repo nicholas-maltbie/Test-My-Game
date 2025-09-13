@@ -14,6 +14,8 @@ public class TextBoundingBox : MonoBehaviour
 
     private TMP_Text textComponent;
 
+    public string CurrentText => this.textComponent.text;
+
     public void Awake()
     {
         this.textComponent = GetComponent<TMP_Text>();
@@ -35,5 +37,11 @@ public class TextBoundingBox : MonoBehaviour
                 this.backgroundBox.gameObject.SetActive(targetActiveState);
             }
         }
+    }
+
+    public void UpdateText(string text)
+    {
+        this.textComponent.text = text;
+        this.textComponent.ForceMeshUpdate();
     }
 }

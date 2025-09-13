@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -15,6 +15,11 @@ public class CaptionedAudio : ScriptableObject
     private Subtitle[] cachedSubtitles;
 
     /// <summary>
+    /// Gets the audio clip for this segment.
+    /// </summary>
+    public AudioClip AudioClip => audioClip;
+
+    /// <summary>
     /// Gets the set of subtitles for a given captioend audio.
     /// </summary>
     public Subtitle[] Subtitles => cachedSubtitles ??= ParseSubtitles();
@@ -23,7 +28,7 @@ public class CaptionedAudio : ScriptableObject
     /// Gets the length of the captioned audio in seconds.
     /// It's the maximum of the audio clip or the subtitles.
     /// </summary>
-    public float ClipLength => Mathf.Max(audioClip.length, Subtitles.Max(sub => (float) sub.EndTime.TotalSeconds));
+    public float ClipLength => Mathf.Max(audioClip.length, Subtitles.Max(sub => (float)sub.EndTime.TotalSeconds));
 
     /// <summary>
     /// Get the current caption for a given playback time.
@@ -39,16 +44,16 @@ public class CaptionedAudio : ScriptableObject
         int left = 0;
         int right = this.Subtitles.Length - 1;
 
-        while (left < right)
+        while (left <= right)
         {
             int mid = left + (right - left) / 2;
             Subtitle selected = this.Subtitles[mid];
 
-            if (selected.StartTime < time)
+            if (selected.StartTime > time)
             {
                 right = mid - 1;
             }
-            else if (selected.EndTime > time)
+            else if (selected.EndTime < time)
             {
                 left = mid + 1;
             }
@@ -90,8 +95,8 @@ public class CaptionedAudio : ScriptableObject
                 subtitles.Add(new Subtitle
                 {
                     Index = index,
-                    StartTime = TimeSpan.Parse(times[0]),
-                    EndTime = TimeSpan.Parse(times[1]),
+                    StartTime = TimeSpan.Parse(times[0].Replace(",", ".")),
+                    EndTime = TimeSpan.Parse(times[1].Replace(",", ".")),
                     Text = text.Trim()
                 });
             }

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce4c496af65b7fc4d83f60d2c47da2c3, type: 3}
-  m_Name: test-audio
+  m_Script: {fileID: 11500000, guid: 8e85a7f330889a64c85bb9114241355c, type: 3}
+  m_Name: test-audio-recording
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 768bc6d4fd1b6074fb2e00eba5b28ce0, type: 3}
   captionsSrt: {fileID: 2811297602134710623, guid: 094e1d56d72d6b240920ab2238bd5416, type: 3}
