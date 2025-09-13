@@ -89,7 +89,7 @@ public class CaptionedAudio : ScriptableObject
 
                 while (i < lines.Length && !string.IsNullOrWhiteSpace(lines[i]))
                 {
-                    text += lines[i++] + " ";
+                    text += lines[i++].Trim() + "\n";
                 }
 
                 subtitles.Add(new Subtitle
@@ -97,7 +97,7 @@ public class CaptionedAudio : ScriptableObject
                     Index = index,
                     StartTime = TimeSpan.Parse(times[0].Replace(",", ".")),
                     EndTime = TimeSpan.Parse(times[1].Replace(",", ".")),
-                    Text = text.Trim()
+                    Text = text,
                 });
             }
 
