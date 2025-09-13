@@ -1,0 +1,20 @@
+﻿1
+00:00:00,001 --> 00:00:01,063
+Boss man also said he
+
+2
+00:00:01,088 --> 00:00:02,730
+liked the slow fall from his
+
+3
+00:00:02,755 --> 00:00:03,825
+big cowboy hat,
+
+4
+00:00:04,198 --> 00:00:05,730
+so I lowered the gravity a bit
+
+5
+00:00:05,755 --> 00:00:07,278
+to give the same look and feel.
+
