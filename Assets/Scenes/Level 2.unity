@@ -2169,6 +2169,11 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1 &440316416 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6053219241457704870, guid: 1bc95292b4fecbe4e94e56a842ea8d5c, type: 3}
+  m_PrefabInstance: {fileID: 6810917700049424623}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2866,9 +2871,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trophy
       objectReference: {fileID: 0}
-    - target: {fileID: 2939812960303781928, guid: 80d3849471511ce42bb35674db7115ec, type: 3}
-      propertyPath: m_GeometryType
-      value: 0
+    - target: {fileID: 3096837926286848748, guid: 80d3849471511ce42bb35674db7115ec, type: 3}
+      propertyPath: OnTouchEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096837926286848748, guid: 80d3849471511ce42bb35674db7115ec, type: 3}
+      propertyPath: OnTouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096837926286848748, guid: 80d3849471511ce42bb35674db7115ec, type: 3}
+      propertyPath: OnTouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 440316416}
+    - target: {fileID: 3096837926286848748, guid: 80d3849471511ce42bb35674db7115ec, type: 3}
+      propertyPath: OnTouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096837926286848748, guid: 80d3849471511ce42bb35674db7115ec, type: 3}
+      propertyPath: OnTouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096837926286848748, guid: 80d3849471511ce42bb35674db7115ec, type: 3}
+      propertyPath: OnTouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096837926286848748, guid: 80d3849471511ce42bb35674db7115ec, type: 3}
+      propertyPath: OnTouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096837926286848748, guid: 80d3849471511ce42bb35674db7115ec, type: 3}
+      propertyPath: OnTouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8456572725408321893, guid: 80d3849471511ce42bb35674db7115ec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2876,7 +2909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8456572725408321893, guid: 80d3849471511ce42bb35674db7115ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.302
       objectReference: {fileID: 0}
     - target: {fileID: 8456572725408321893, guid: 80d3849471511ce42bb35674db7115ec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3048,13 +3081,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
-    - target: {fileID: 6754122050320109512, guid: 1bc95292b4fecbe4e94e56a842ea8d5c, type: 3}
-      propertyPath: m_LocalPosition.x
+    - target: {fileID: 6053219241457704870, guid: 1bc95292b4fecbe4e94e56a842ea8d5c, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6754122050320109512, guid: 1bc95292b4fecbe4e94e56a842ea8d5c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754122050320109512, guid: 1bc95292b4fecbe4e94e56a842ea8d5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.188
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6754122050320109512, guid: 1bc95292b4fecbe4e94e56a842ea8d5c, type: 3}
       propertyPath: m_LocalPosition.z
