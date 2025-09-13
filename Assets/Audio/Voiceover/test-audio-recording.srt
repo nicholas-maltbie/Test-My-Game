@@ -1,0 +1,8 @@
+﻿1
+00:00:00,001 --> 00:00:02,598
+Alright, this is the first test recording.
+
+2
+00:00:02,623 --> 00:00:05,426
+Let's see how it goes.
+
