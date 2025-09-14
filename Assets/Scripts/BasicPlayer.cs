@@ -21,6 +21,12 @@ public class BasicPlayer : MonoBehaviour
     private const float Damping = 10f;
 
     [SerializeField]
+    public bool useGravity = true;
+
+    [SerializeField]
+    public bool jumpEnabled = true;
+
+    [SerializeField]
     private InputActionReference moveActionReference;
 
     [SerializeField]
@@ -69,7 +75,7 @@ public class BasicPlayer : MonoBehaviour
     // Physics information
     private Vector2 gravity;
 
-    private Vector2 InitialJumpVelocity => 2 * Mathf.Sqrt(this.gravity.magnitude * this.jumpHeight) * this.Up;
+    private Vector2 InitialJumpVelocity => Mathf.Sqrt(2 * this.gravity.magnitude * this.jumpHeight) * this.Up;
     private Vector2 Position2D => new Vector2(this.transform.position.x, this.transform.position.y);
     private Vector2 Down => this.gravity.normalized;
     private Vector2 Up => -this.gravity.normalized;
@@ -114,7 +120,7 @@ public class BasicPlayer : MonoBehaviour
         CheckGrounded();
 
         // Adjust due to gravity influence.
-        if (!OnGround || Sliding || timeSinceLastJump > JumpGracePeriod)
+        if ((!OnGround || Sliding || timeSinceLastJump > JumpGracePeriod) && useGravity)
         {
             // If not on ground or sliding, apply gravity
             this.rb2d.linearVelocity += gravity * Time.fixedDeltaTime;
@@ -160,12 +166,28 @@ public class BasicPlayer : MonoBehaviour
 
     private void OnJump(InputAction.CallbackContext context)
     {
-        this.jumpQueued = true;
+        if (jumpEnabled)
+        {
+            this.jumpQueued = true;
+        }
     }
 
     private void CheckGrounded()
     {
         var boxCenter = this.Position2D + this.boxCollider.offset;
-        this.groundHit = Physics2D.BoxCast(boxCenter, this.boxCollider.size, transform.eulerAngles.z, Down, groundedDistance, layerMask: ~excludeCollision);
+        this.groundHit = default;
+        var hits = Physics2D.BoxCastAll(boxCenter, this.boxCollider.size, transform.eulerAngles.z, Down, groundedDistance, layerMask: ~excludeCollision);
+
+        // Filter for first hit that is not a trigger or self
+        foreach (var hit in hits)
+        {
+            if (hit.collider.isTrigger || hit.collider.gameObject == gameObject)
+            {
+                continue;
+            }
+
+            this.groundHit = hit;
+            return;
+        }
     }
 }

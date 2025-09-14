@@ -29,12 +29,3 @@ You can use A and D keys to move
 00:00:15,952 --> 00:00:18,008
 Go ahead and move to
 the door when you’re ready!
-
-8
-00:00:18,190 --> 00:00:20,484
-Ope, I forgot to add the door.
-
-9
-00:00:20,509 --> 00:00:23,246
-Here, you go! Head on in!
-
