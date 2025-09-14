@@ -3015,6 +3015,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  disableCollisionTrigger: 0
 --- !u!1001 &1440325973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3103,11 +3104,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayBeforeFrustratedAudio: 10
   initialDelay: 0.5
+  waitForPlayer: 10
   level2Intro: {fileID: 11400000, guid: 428c023208900f745b68d62a2344b321, type: 2}
   gravityBugFoundAudio: {fileID: 11400000, guid: 87edf1ebb292fcd42b450f58bf6bacb8, type: 2}
+  moveDoorAudio: {fileID: 11400000, guid: b5c79e3153d924c4d915930e1219fdc6, type: 2}
   level3:
     m_SceneAsset: {fileID: 102900000, guid: b3e3a3b51e9651f4093157a212d0211d, type: 3}
     m_SceneName: Level 3
+  door: {fileID: 1967637732}
 --- !u!4 &1685180434
 Transform:
   m_ObjectHideFlags: 0
@@ -3123,6 +3127,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1967637727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6053219241457704870, guid: 1bc95292b4fecbe4e94e56a842ea8d5c, type: 3}
+  m_PrefabInstance: {fileID: 6810917700049424623}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1967637732
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967637727}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1445172924683272184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3392,7 +3428,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6053219241457704870, guid: 1bc95292b4fecbe4e94e56a842ea8d5c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1967637732}
   m_SourcePrefab: {fileID: 100100000, guid: 1bc95292b4fecbe4e94e56a842ea8d5c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

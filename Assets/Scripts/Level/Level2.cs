@@ -10,6 +10,8 @@ public class Level2 : MonoBehaviour
         ReadingIntro,
         Waiting,
         IdentifyBug,
+        Frustrated,
+        MovingDoor,
     }
 
     private bool gravityBugFound = false;
@@ -20,6 +22,8 @@ public class Level2 : MonoBehaviour
 
     public float initialDelay = 0.5f;
 
+    public float waitForPlayer = 10f;
+
     [SerializeField]
     public CaptionedAudio level2Intro;
 
@@ -27,7 +31,13 @@ public class Level2 : MonoBehaviour
     public CaptionedAudio gravityBugFoundAudio;
 
     [SerializeField]
+    public CaptionedAudio moveDoorAudio;
+
+    [SerializeField]
     public SceneField level3;
+
+    [SerializeField]
+    public Rigidbody2D door;
 
     private VoiceoverPlayback voiceover;
 
@@ -42,6 +52,24 @@ public class Level2 : MonoBehaviour
     public void OnDestroy()
     {
         voiceover.OnPlaybackCompleted.RemoveListener(this.OnAudioCompleted);
+    }
+
+    public void FixedUpdate()
+    {
+        if (currentState == State.MovingDoor)
+        {
+            // Move the door closer to the player
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+            // Accelerate the door toward the player
+            var delta = player.transform.position - door.transform.position;
+            delta = delta.normalized * 10;
+            var targetVelocity = new Vector2(delta.x, delta.y);
+            var currentVelocity = door.linearVelocity;
+
+            var push = Vector2.ClampMagnitude(targetVelocity - currentVelocity, 5 * Time.fixedDeltaTime);
+            door.linearVelocity += push;
+        }
     }
 
     public void OnPlayerFloat()
@@ -68,7 +96,7 @@ public class Level2 : MonoBehaviour
 
     private void TransitionToNextLevel()
     {
-        SceneManager.LoadScene(level3.SceneName);
+        Transition.ToScene(level3.SceneName);
     }
 
     private void OnAudioCompleted(CaptionedAudio clip)
@@ -78,6 +106,7 @@ public class Level2 : MonoBehaviour
             case State.IdentifyBug:
                 GameObject.FindFirstObjectByType<BasicPlayer>().useGravity = true;
                 currentState = State.Waiting;
+                StartCoroutine(WaitForStuffToHappen());
                 break;
             case State.ReadingIntro:
                 if (gravityBugFound)
@@ -87,8 +116,11 @@ public class Level2 : MonoBehaviour
                 else
                 {
                     currentState = State.Waiting;
+                    StartCoroutine(WaitForStuffToHappen());
                 }
-
+                break;
+            case State.Waiting:
+                currentState = State.MovingDoor;
                 break;
         }
     }
@@ -97,5 +129,16 @@ public class Level2 : MonoBehaviour
     {
         yield return new WaitForSeconds(initialDelay);
         voiceover.PlayCaptionedAudio(level2Intro);
+    }
+
+    private IEnumerator WaitForStuffToHappen()
+    {
+        yield return new WaitForSeconds(waitForPlayer);
+        if (currentState == State.Waiting)
+        {
+            voiceover.PlayCaptionedAudio(moveDoorAudio);
+        }
+
+        currentState = State.Frustrated;
     }
 }
