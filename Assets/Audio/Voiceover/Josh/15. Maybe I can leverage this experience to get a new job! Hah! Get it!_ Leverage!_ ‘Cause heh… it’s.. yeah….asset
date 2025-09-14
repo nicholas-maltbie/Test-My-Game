@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e85a7f330889a64c85bb9114241355c, type: 3}
+  m_Name: "15. Maybe I can leverage this experience to get a new job! Hah! Get it!_
+    Leverage!_ \u2018Cause heh\u2026 it\u2019s.. yeah\u2026"
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: c016c27099b444744bd0b912010f4cf0, type: 3}
+  captionsSrt: {fileID: 2811297602134710623, guid: f17f59b3ea3c69045b2836d27fa22e23, type: 3}

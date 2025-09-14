@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e85a7f330889a64c85bb9114241355c, type: 3}
+  m_Name: 09-Reaction to knocking trophy into ground
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 5f3ad525881ca814fb91b7b693d86567, type: 3}
+  captionsSrt: {fileID: 2811297602134710623, guid: 3493e596d57b5374683f9e5ba462b1c4, type: 3}

@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e85a7f330889a64c85bb9114241355c, type: 3}
+  m_Name: 29-I should have built a fence
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 407fe46c80d1f4e4e83bbfe4e861f9ed, type: 3}
+  captionsSrt: {fileID: 2811297602134710623, guid: c30cdeee5a9a2f342823d90d7e5e6476, type: 3}

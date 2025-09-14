@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e85a7f330889a64c85bb9114241355c, type: 3}
+  m_Name: 12. Boss man also said he liked the slow fall from his big cowboy hat,
+    so I lowered the gravity a bit to give the same look and feel.
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 06e613a920e4aa145b153ec8f3262a34, type: 3}
+  captionsSrt: {fileID: 2811297602134710623, guid: 70bfa7ca5e602a64c81ec0ad1b9f448d, type: 3}
