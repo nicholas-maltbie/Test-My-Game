@@ -1,3 +1,4 @@
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -81,6 +82,10 @@ public class BasicPlayer : MonoBehaviour
     private Vector2 Up => -this.gravity.normalized;
     private Vector2 Right => this.transform.right;
 
+    // Animator values
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+
     public void Start()
     {
         this.moveAction = this.moveActionReference.action;
@@ -90,6 +95,8 @@ public class BasicPlayer : MonoBehaviour
         this.gravity = Physics2D.gravity;
 
         this.jumpAction.performed += this.OnJump;
+        animator = this.GetComponent<Animator>();
+        spriteRenderer = this.GetComponent<SpriteRenderer>();
     }
 
     public void OnDestroy()
@@ -161,6 +168,27 @@ public class BasicPlayer : MonoBehaviour
         else
         {
             this.timeSinceLastJump += Time.fixedDeltaTime;
+        }
+
+        UpdateAnimationValues();
+    }
+
+    private void UpdateAnimationValues()
+    {
+        if( animator )
+        {
+            float movementFloatBounds = .05f;
+            bool isMoving = Mathf.Abs(this.rb2d.linearVelocityX) > movementFloatBounds;
+
+            animator.SetBool("isGrounded", this.OnGround);
+            animator.SetBool("isMoving", isMoving );
+
+            animator.SetBool("isJumping", timeSinceLastJump < .1f);
+
+            if( isMoving )
+            {
+                spriteRenderer.flipX = this.rb2d.linearVelocity.x < 0;
+            }
         }
     }
 
