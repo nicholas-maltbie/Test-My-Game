@@ -13,12 +13,14 @@ public class CaptionedAudioCreator : EditorWindow
     }
 
     private string folderPath = "Assets/Audio";
+    private string speakerName = "";
 
     private void OnGUI()
     {
         GUILayout.Label("CaptionedAudio Creator", EditorStyles.boldLabel);
 
         folderPath = EditorGUILayout.TextField("Folder Path", folderPath);
+        speakerName = EditorGUILayout.TextField("Speaker Name", speakerName);
 
         if (GUILayout.Button("Create CaptionedAudio"))
         {
@@ -68,26 +70,43 @@ public class CaptionedAudioCreator : EditorWindow
 
         if (commonPaths.Count > 0)
         {
-            CaptionedAudio captionedAudio = null;
             foreach (var commonPath in commonPaths)
             {
                 // Check if asset already exists
                 var assetPath = commonPath + ".asset";
-                if (AssetDatabase.AssetPathExists(assetPath))
+                bool exists = AssetDatabase.AssetPathExists(assetPath);
+                CaptionedAudio captionedAudio = null;
+                if (exists)
                 {
-                    // Check if it's already created
+                    // Check if it's not of type captioned audio
                     var type = AssetDatabase.GetMainAssetTypeAtPath(assetPath);
-                    Debug.Log($"Found existing asset at path:{assetPath} of type:{type}, skipping making new captioned audio.");
+                    captionedAudio = AssetDatabase.LoadAssetAtPath(assetPath, typeof(CaptionedAudio)) as CaptionedAudio;
+                    if (captionedAudio == null)
+                    {
+                        Debug.Log($"Found existing asset at path:{assetPath} of unexpected type:{type}, skipping this file.");
+                        continue;
+                    }
 
-                    // skip this asset
-                    continue;
+                    // Check if it's already created
+                    // Debug.Log($"Found existing asset at path:{assetPath}, updating existing file's clip, srt, and speaker.");
+                }
+                else
+                {
+                    // Create new asset
+                    captionedAudio = ScriptableObject.CreateInstance<CaptionedAudio>();
                 }
 
-                // Create new asset
-                captionedAudio = ScriptableObject.CreateInstance<CaptionedAudio>();
                 captionedAudio.audioClip = audioClipsByName[commonPath];
                 captionedAudio.captionsSrt = srtFilesByName[commonPath];
-                AssetDatabase.CreateAsset(captionedAudio, assetPath);
+                if (!string.IsNullOrEmpty(speakerName))
+                {
+                    captionedAudio.speakerName = speakerName;
+                }
+
+                if (!exists)
+                {
+                    AssetDatabase.CreateAsset(captionedAudio, assetPath);
+                }
             }
 
             AssetDatabase.SaveAssets();

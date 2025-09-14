@@ -12,6 +12,9 @@ public class CaptionedAudio : ScriptableObject
     [SerializeField]
     public TextAsset captionsSrt;
 
+    [SerializeField]
+    public string speakerName;
+
     private Subtitle[] cachedSubtitles;
 
     /// <summary>
