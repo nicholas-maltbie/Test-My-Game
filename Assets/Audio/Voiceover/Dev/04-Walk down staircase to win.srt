@@ -1,0 +1,9 @@
+﻿1
+00:00:00,001 --> 00:00:01,746
+Ok, so for this level,
+
+2
+00:00:01,771 --> 00:00:04,714
+you just need to walk down
+the staircase to get to the door.
+

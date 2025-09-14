@@ -1,0 +1,40 @@
+﻿1
+00:00:00,001 --> 00:00:02,729
+Hey!
+Thanks for taking the time to test my game!
+
+2
+00:00:02,960 --> 00:00:06,349
+As you know I don’t have a
+ton of funds available just yet,
+
+3
+00:00:06,476 --> 00:00:09,619
+but I’m ready to split some of the
+funds we get when we publishing this thing!
+
+4
+00:00:10,032 --> 00:00:11,904
+So this game’s a 2D platformer!
+
+5
+00:00:11,929 --> 00:00:13,935
+You can use A and D keys to move
+
+6
+00:00:13,960 --> 00:00:15,595
+ or the left stick on your controller.
+
+7
+00:00:15,952 --> 00:00:18,008
+Go ahead and move to
+the door when you’re ready!
+
+8
+00:00:18,190 --> 00:00:20,484
+Ope, I forgot to add the door.
+
+9
+00:00:20,509 --> 00:00:23,246
+Here, you go! Head on in!
+

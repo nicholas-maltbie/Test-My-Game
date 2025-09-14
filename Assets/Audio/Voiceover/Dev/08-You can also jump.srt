@@ -1,0 +1,21 @@
+﻿1
+00:00:00,001 --> 00:00:01,174
+Nice job!
+
+2
+00:00:01,357 --> 00:00:03,667
+Ah, I almost forgot, you can also jump.
+
+3
+00:00:03,754 --> 00:00:05,913
+I think it’s ahhhh.. Space bar!
+[Or A button on Controller]
+
+4
+00:00:05,938 --> 00:00:07,134
+That’s the one.
+
+5
+00:00:07,159 --> 00:00:09,802
+Go jump up there and touch that trophy to get to the next level!
+

@@ -1,0 +1,10 @@
+﻿1
+00:00:00,190 --> 00:00:02,746
+Oh, you weren't supposed
+to be able to do that,
+
+2
+00:00:02,873 --> 00:00:06,294
+maybe I misconfigured the
+collision? Something to fix next level.
+

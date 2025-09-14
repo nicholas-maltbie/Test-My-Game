@@ -1,0 +1,21 @@
+﻿1
+00:00:00,032 --> 00:00:03,341
+Oh, it seems like you can't fall.
+
+2
+00:00:03,413 --> 00:00:06,333
+Uhhh, I must have forgotten
+to enable gravity.
+
+3
+00:00:06,579 --> 00:00:07,587
+Let me fix that...
+
+4
+00:00:07,612 --> 00:00:09,222
+**Percussive Maintenance Sounds**
+
+5
+00:00:09,247 --> 00:00:10,793
+Alright, you're falling now
+

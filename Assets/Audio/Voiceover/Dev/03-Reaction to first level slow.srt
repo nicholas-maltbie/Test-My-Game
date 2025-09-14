@@ -1,0 +1,12 @@
+﻿1
+00:00:00,001 --> 00:00:01,587
+Oh, is something broken?
+
+2
+00:00:01,612 --> 00:00:03,238
+Why haven't you finished the level yet,
+
+3
+00:00:03,263 --> 00:00:05,007
+it should be pretty easy.
+
