@@ -13,10 +13,10 @@ public class HorizontalCameraFollow : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = new Vector3( Mathf.Max(followTarget.position.x, initialPosition.x),
+        var targetPosition = new Vector3( Mathf.Max(followTarget.position.x, initialPosition.x),
                                           Mathf.Max(followTarget.position.y, initialPosition.y),
                                           transform.position.z);
 
-        
+        transform.position = Vector3.Slerp(transform.position, targetPosition, .1f);
     }
 }
