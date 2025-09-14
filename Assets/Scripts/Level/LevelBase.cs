@@ -81,14 +81,15 @@ public class LevelBase : MonoBehaviour
         foreach( var voiceLine in completionVoiceLines )
         {
             yield return new WaitForSeconds(initialDelay);
-
+            float elapsed = 0;
             currentState = State.Reading;
             voiceover.PlayCaptionedAudio(voiceLine);
             voiceover.OnPlaybackCompleted.AddListener(ResetState);
 
-            while( currentState == State.Reading )
+            while( currentState == State.Reading && elapsed < voiceLine.ClipLength)
             {
                 yield return null;
+                elapsed += Time.deltaTime;
             }
         }
 

@@ -4,10 +4,11 @@ using UnityEngine.Events;
 public class Goal : MonoBehaviour
 {
     public UnityEvent OnTouchEvent;
+    public bool disableCollisionTrigger = false;
 
     private void OnCollisionEnter2D( Collision2D collision )
     {
-        if( collision.gameObject.tag == "Player" )
+        if( !disableCollisionTrigger && collision.gameObject.tag == "Player" )
         {
             OnTouchEvent.Invoke();
         }
