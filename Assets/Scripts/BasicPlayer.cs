@@ -74,7 +74,7 @@ public class BasicPlayer : MonoBehaviour
 
 
     // Physics information
-    private Vector2 gravity;
+    private Vector2 gravity => Physics2D.gravity;
 
     private Vector2 InitialJumpVelocity => Mathf.Sqrt(2 * this.gravity.magnitude * this.jumpHeight) * this.Up;
     private Vector2 Position2D => new Vector2(this.transform.position.x, this.transform.position.y);
@@ -92,7 +92,6 @@ public class BasicPlayer : MonoBehaviour
         this.jumpAction = this.jumpActionReference.action;
         this.boxCollider = this.GetComponent<BoxCollider2D>();
         this.rb2d = this.GetComponent<Rigidbody2D>();
-        this.gravity = Physics2D.gravity;
 
         this.jumpAction.performed += this.OnJump;
         animator = this.GetComponent<Animator>();
