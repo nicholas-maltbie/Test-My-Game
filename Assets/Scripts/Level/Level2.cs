@@ -14,8 +14,6 @@ public class Level2 : MonoBehaviour
         MovingDoor,
     }
 
-    private bool gravityBugFound = false;
-
     private State currentState = State.ReadingIntro;
 
     public float delayBeforeFrustratedAudio = 10.0f;
@@ -34,7 +32,7 @@ public class Level2 : MonoBehaviour
     public CaptionedAudio moveDoorAudio;
 
     [SerializeField]
-    public SceneField level3;
+    public SceneField level2_5_jump;
 
     [SerializeField]
     public Rigidbody2D door;
@@ -74,12 +72,12 @@ public class Level2 : MonoBehaviour
 
     public void OnPlayerFloat()
     {
-        if (currentState == State.Waiting && gravityBugFound == false)
+        if (currentState == State.Waiting && StoryFlags.GravityBugFixed == false)
         {
             FixFloatingBug();
         }
 
-        gravityBugFound = true;
+        StoryFlags.GravityBugFixed = true;
     }
 
     public void OnHitDoor()
@@ -96,32 +94,33 @@ public class Level2 : MonoBehaviour
 
     private void TransitionToNextLevel()
     {
-        Transition.ToScene(level3.SceneName);
+        Transition.ToScene(level2_5_jump.SceneName);
     }
 
     private void OnAudioCompleted(CaptionedAudio clip)
     {
-        switch (currentState)
+        if (clip == moveDoorAudio)
         {
-            case State.IdentifyBug:
-                GameObject.FindFirstObjectByType<BasicPlayer>().useGravity = true;
+            currentState = State.MovingDoor;
+        }
+        else if (clip == gravityBugFoundAudio)
+        {
+            GameObject.FindFirstObjectByType<BasicPlayer>().useGravity = true;
+            StoryFlags.GravityBugFixed = true;
+            currentState = State.Waiting;
+            StartCoroutine(WaitForStuffToHappen());
+        }
+        else if (clip == level2Intro)
+        {
+            if (StoryFlags.GravityBugFixed)
+            {
+                FixFloatingBug();
+            }
+            else
+            {
                 currentState = State.Waiting;
                 StartCoroutine(WaitForStuffToHappen());
-                break;
-            case State.ReadingIntro:
-                if (gravityBugFound)
-                {
-                    FixFloatingBug();
-                }
-                else
-                {
-                    currentState = State.Waiting;
-                    StartCoroutine(WaitForStuffToHappen());
-                }
-                break;
-            case State.Waiting:
-                currentState = State.MovingDoor;
-                break;
+            }
         }
     }
 

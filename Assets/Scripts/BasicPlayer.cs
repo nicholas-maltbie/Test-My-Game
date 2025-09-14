@@ -1,5 +1,6 @@
 using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(BoxCollider2D))]
@@ -21,11 +22,16 @@ public class BasicPlayer : MonoBehaviour
     // Damping force to reduce oscillations (c) to reach target height.
     private const float Damping = 10f;
 
+    public UnityEvent OnDoubleJump;
+
     [SerializeField]
     public bool useGravity = true;
 
     [SerializeField]
     public bool jumpEnabled = true;
+
+    [SerializeField]
+    public int jumpLimit = 1;
 
     [SerializeField]
     private InputActionReference moveActionReference;
@@ -55,6 +61,8 @@ public class BasicPlayer : MonoBehaviour
     private InputAction moveAction;
     private InputAction jumpAction;
     private Vector2 moveInput;
+
+    private int jumpCount = 0;
 
     // Jump information
     private bool jumpQueued;
@@ -124,6 +132,7 @@ public class BasicPlayer : MonoBehaviour
     {
         // Update grounded state
         CheckGrounded();
+        var verticalComponent = Vector2.Dot(this.rb2d.linearVelocity, Up) * Up;
 
         // Adjust due to gravity influence.
         if ((!OnGround || Sliding || timeSinceLastJump > JumpGracePeriod) && useGravity)
@@ -134,7 +143,6 @@ public class BasicPlayer : MonoBehaviour
         else if (OnGround)
         {
             // Otherwise, apply a _strong_ damping force to the vertical component of the linear velocity.
-            var verticalComponent = Vector2.Dot(this.rb2d.linearVelocity, Up) * Up;
 
             // Compute target vertical velocity to reach target grounded height
             var displacement = (TargetGroundHeight - GroundDistance) * Up;
@@ -158,15 +166,26 @@ public class BasicPlayer : MonoBehaviour
         this.rb2d.linearVelocity += push;
 
         // Apply jump if able
-        if (OnGround && jumpQueued)
+        bool canJump = OnGround || jumpCount < jumpLimit;
+        if (canJump && jumpQueued)
         {
-            this.rb2d.linearVelocity += this.InitialJumpVelocity;
+            if (jumpCount > 0 && jumpLimit > 1)
+            {
+                OnDoubleJump?.Invoke();
+            }
+
+            this.rb2d.linearVelocity += this.InitialJumpVelocity - verticalComponent;
             this.jumpQueued = false;
+            this.jumpCount++;
             this.timeSinceLastJump = 0;
         }
         else
         {
             this.timeSinceLastJump += Time.fixedDeltaTime;
+            if (OnGround && this.timeSinceLastJump >= JumpGracePeriod)
+            {
+                jumpCount = 0;
+            }
         }
 
         UpdateAnimationValues();
