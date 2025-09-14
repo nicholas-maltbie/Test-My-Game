@@ -17,6 +17,6 @@ public class HorizontalCameraFollow : MonoBehaviour
                                           Mathf.Max(followTarget.position.y, initialPosition.y),
                                           transform.position.z);
 
-        transform.position = Vector3.Slerp(transform.position, targetPosition, .1f);
+        transform.position = Vector3.Slerp(transform.position, targetPosition, 20f * Time.deltaTime);
     }
 }
