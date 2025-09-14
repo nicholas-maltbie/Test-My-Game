@@ -7,10 +7,13 @@ using UnityEngine;
 public class CaptionedAudio : ScriptableObject
 {
     [SerializeField]
-    private AudioClip audioClip;
+    public AudioClip audioClip;
 
     [SerializeField]
-    private TextAsset captionsSrt;
+    public TextAsset captionsSrt;
+
+    [SerializeField]
+    public string speakerName;
 
     private Subtitle[] cachedSubtitles;
 
