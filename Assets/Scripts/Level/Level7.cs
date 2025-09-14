@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class Level7 : MonoBehaviour
+public class Level7 : LevelBase
 {
+    public GameObject door;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Start()
     {
-        
+        base.Start();
+        Physics2D.gravity = Vector2.down * 0.75f;
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void OnFinishCompletionVoiceLines()
     {
-        
+        base.OnFinishCompletionVoiceLines();
+        door.SetActive(true);
     }
 }
