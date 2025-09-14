@@ -12,8 +12,6 @@ public class LeverHandle : MonoBehaviour
 
     private void OnCollisionStay2D( Collision2D collision )
     {
-        Debug.Log(transform.rotation.z);
-
         if( transform.rotation.z > leftRotationThreshold )
         {
             if( !isLeftTriggered )

@@ -63,7 +63,7 @@ public class Level1 : MonoBehaviour
 
     private void TransitionToNextLevel()
     {
-        SceneManager.LoadScene(level2.SceneName);
+        Transition.ToScene(level2.SceneName);
     }
 
     private void OnAudioCompleted(CaptionedAudio clip)
