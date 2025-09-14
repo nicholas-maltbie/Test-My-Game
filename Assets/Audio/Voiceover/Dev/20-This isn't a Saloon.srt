@@ -1,0 +1,5 @@
+﻿1
+00:00:00,531 --> 00:00:03,398
+This isn’t a saloon,
+this is a barber shop!
+

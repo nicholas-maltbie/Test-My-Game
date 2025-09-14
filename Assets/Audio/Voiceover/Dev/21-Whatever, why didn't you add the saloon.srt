@@ -1,0 +1,4 @@
+﻿1
+00:00:00,063 --> 00:00:02,663
+Whatever, why didn’t you make a saloon!
+

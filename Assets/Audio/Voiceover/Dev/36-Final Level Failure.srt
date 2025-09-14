@@ -1,0 +1,26 @@
+﻿1
+00:00:00,127 --> 00:00:01,647
+Ah, did you do it?
+
+2
+00:00:01,754 --> 00:00:03,487
+But you’re a gamer, right?
+
+3
+00:00:03,746 --> 00:00:05,134
+It’s gotta be beatable!
+
+4
+00:00:05,349 --> 00:00:07,571
+Agh.. I don’t know. I’ve
+been thinking about it,
+
+5
+00:00:07,596 --> 00:00:11,079
+and I’m thinking we might need to take a
+step back from this game development thing.
+
+6
+00:00:11,104 --> 00:00:13,104
+I guess it’s just not for me.
+

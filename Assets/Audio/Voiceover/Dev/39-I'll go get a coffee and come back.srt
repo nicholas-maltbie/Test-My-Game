@@ -1,0 +1,13 @@
+﻿1
+00:00:00,001 --> 00:00:01,047
+You know what,
+
+2
+00:00:01,072 --> 00:00:02,912
+I'll just wait for you to finish,
+
+3
+00:00:02,937 --> 00:00:05,714
+I'll go get a coffee or something
+and come back when you're done.
+

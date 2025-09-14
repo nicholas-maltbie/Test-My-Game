@@ -1,0 +1,14 @@
+﻿1
+00:00:00,174 --> 00:00:01,880
+Oh, wait, my bad,
+
+2
+00:00:02,103 --> 00:00:03,857
+I forgot to give
+the horse a hitbox.
+
+3
+00:00:03,882 --> 00:00:05,888
+Here, have another
+horse, I fixed this one!
+

@@ -1,0 +1,51 @@
+﻿1
+00:00:00,158 --> 00:00:02,309
+Oops, that wasn’t supposed to happen.
+
+2
+00:00:02,334 --> 00:00:04,943
+The camera was supposed
+to move down with you.
+
+3
+00:00:04,968 --> 00:00:07,168
+Here, I’ll fix that right quick.
+
+4
+00:00:07,294 --> 00:00:08,960
+By the way, I recently hired an intern
+
+5
+00:00:08,985 --> 00:00:11,023
+who’s going to make some art for the…
+**Phone Ringing**
+
+6
+00:00:11,048 --> 00:00:12,261
+**Phone continues ringing**
+
+7
+00:00:12,286 --> 00:00:15,015
+Oh Sorry, I’ve gotta take this. 
+**Phone still continues ringging**
+
+8
+00:00:15,135 --> 00:00:17,635
+**yelling in background** Hey
+Josh, can you handle QA for a bit?
+
+9
+00:00:17,683 --> 00:00:19,480
+I’ll be back in just a
+bit. Don’t worry,
+
+10
+00:00:19,504 --> 00:00:21,222
+ you’ll be in good hands for
+these next levels.
+
+11
+00:00:21,247 --> 00:00:23,682
+We decided on an
+awesome new art direction!
+

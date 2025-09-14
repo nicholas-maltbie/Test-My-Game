@@ -1,0 +1,18 @@
+﻿1
+00:00:00,016 --> 00:00:02,508
+Awesome! Welcome to level 3 and...
+
+2
+00:00:02,794 --> 00:00:04,762
+wait, where’s the  platforms?
+
+3
+00:00:05,302 --> 00:00:08,468
+There’s supposed to be platforms
+here so you can finish the level!
+
+4
+00:00:09,413 --> 00:00:12,540
+Wait right there, I’ll be just a
+minute, let me go and make those!
+

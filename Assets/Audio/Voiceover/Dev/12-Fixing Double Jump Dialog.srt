@@ -1,0 +1,20 @@
+﻿1
+00:00:00,001 --> 00:00:04,460
+ooooh, I forgot to check if you’re
+on the ground when you jump!
+
+2
+00:00:04,531 --> 00:00:07,873
+Give me just another
+moment aaaaaand there, fixed!
+
+3
+00:00:08,119 --> 00:00:09,832
+Thanks for catching
+that one, I don’t know
+
+4
+00:00:09,856 --> 00:00:11,905
+what I’d do if that
+made it to the final build!
+

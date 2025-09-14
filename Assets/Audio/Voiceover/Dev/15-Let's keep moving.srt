@@ -1,0 +1,4 @@
+﻿1
+00:00:00,157 --> 00:00:02,474
+Alright, good work, let’s keep moving!
+

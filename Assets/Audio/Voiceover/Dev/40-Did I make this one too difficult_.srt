@@ -1,0 +1,9 @@
+﻿1
+00:00:00,001 --> 00:00:02,855
+Come on, you were able to beat
+the last level you took long to finish
+
+2
+00:00:02,880 --> 00:00:04,784
+Did I make this one too difficult?
+
