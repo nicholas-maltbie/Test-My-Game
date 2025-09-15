@@ -5,9 +5,12 @@ using UnityEngine.Events;
 [RequireComponent(typeof(AudioSource))]
 public class VoiceoverPlayback : MonoBehaviour
 {
+    public const float bufferTime = 3f;
+
     private TextBoundingBox captionBox;
     private AudioSource audioSource;
     private CaptionedAudio currentlyPlaying;
+    private float autioStartTime;
 
     /// <summary>
     /// Unity event whenever playback of current audio is completed.
@@ -27,6 +30,7 @@ public class VoiceoverPlayback : MonoBehaviour
         this.currentlyPlaying = audio;
         this.audioSource.clip = audio.AudioClip;
         this.audioSource.Play();
+        autioStartTime = Time.time;
     }
 
     public void Stop()
@@ -44,7 +48,8 @@ public class VoiceoverPlayback : MonoBehaviour
     {
         if (currentlyPlaying != null)
         {
-            if (!audioSource.isPlaying && audioSource.time >= audioSource.clip.length)
+            var audioCompleted = audioSource.time >= audioSource.clip.length || (Time.time - bufferTime > currentlyPlaying.ClipLength + bufferTime);
+            if (!audioSource.isPlaying && audioCompleted)
             {
                 this.Stop();
                 return;
