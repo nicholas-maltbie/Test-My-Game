@@ -54,10 +54,13 @@ public class LevelBase : MonoBehaviour
     protected virtual IEnumerator PlayInitialAudio()
     {
         yield return new WaitForSeconds(initialDelay);
-        voiceover.PlayCaptionedAudio(levelIntro);
+        if( levelIntro )
+        {
+            voiceover.PlayCaptionedAudio(levelIntro);
+        }
     }
 
-    private void ResetState( CaptionedAudio clip )
+    protected void ResetState( CaptionedAudio clip )
     {
         currentState = State.Waiting;
     }
