@@ -39,14 +39,6 @@ public class Level4 : MonoBehaviour
         voiceover.OnPlaybackCompleted.AddListener(this.OnAudioCompleted);
 
         var player = GameObject.FindFirstObjectByType<BasicPlayer>();
-        if (StoryFlags.DoubleJumpFixed)
-        {
-            player.jumpLimit = 2;
-        }
-        else
-        {
-            player.jumpLimit = 999;
-        }
     }
 
     public void OnDestroy()
@@ -66,7 +58,7 @@ public class Level4 : MonoBehaviour
 
     public void TransitionToNextLevel()
     {
-        if (joshAudioCompleted)
+        if (joshAudioCompleted && !levelTransferQueued)
         {
             Transition.ToScene(level5.SceneName);
         }
@@ -86,7 +78,7 @@ public class Level4 : MonoBehaviour
                 voiceover.PlayCaptionedAudio(handOffWork);
             }
         }
-        if (clip == handOffWork)
+        else if (clip == handOffWork)
         {
             joshAudioCompleted = true;
             if (levelTransferQueued)
