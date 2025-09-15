@@ -212,7 +212,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      defaultMat_Height_0: 192681895338627798
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
