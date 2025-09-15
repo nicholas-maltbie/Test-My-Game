@@ -46,7 +46,7 @@ public class Level13 : LevelBase
     protected override void OnFinishCompletionVoiceLines()
     {
         base.OnFinishCompletionVoiceLines();
-        if( hasWon )
+        if( hasWon || !hasLost )
         {
             Transition.ToScene(winScene.SceneName);
         }
