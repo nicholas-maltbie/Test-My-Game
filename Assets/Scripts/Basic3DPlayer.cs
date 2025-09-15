@@ -52,11 +52,21 @@ class Basic3DPlayer : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        playerControls["Jump"].performed -= OnJump_Callback;
     }
 
     private void DoJump()
     {
-        worldVelocity += jumpVelocity * Vector3.up;
+        worldVelocity = jumpVelocity * Vector3.up;
+    }
+
+    public void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        var horse = hit.gameObject.GetComponent<SecondHorse>();
+        if (horse != null)
+        {
+            horse.OnPlayerHit(gameObject, hit.point);
+        }
     }
 
     private void OnJump_Callback(InputAction.CallbackContext context)
@@ -110,12 +120,12 @@ class Basic3DPlayer : MonoBehaviour
         {
             worldVelocity += Physics.gravity * Time.fixedDeltaTime;
         }
-        else
+        else if (Vector3.Dot(worldVelocity, Vector3.up) <= 0)
         {
             worldVelocity = Vector3.zero;
         }
 
-        characterController.Move(moveVelocity + worldVelocity);
+        characterController.Move((moveVelocity + worldVelocity) * Time.fixedDeltaTime);
     }
 
     private void OnLook_Callback(Vector2 delta)

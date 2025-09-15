@@ -21,4 +21,12 @@ public class Goal : MonoBehaviour
             OnTouchEvent.Invoke();
         }
     }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            OnTouchEvent.Invoke();
+        }
+    }
 }
