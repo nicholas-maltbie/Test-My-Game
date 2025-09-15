@@ -6,5 +6,8 @@ using System.Threading.Tasks;
 
 public class Level12 : LevelBase
 {
-
+    protected override void OnFinishCompletionVoiceLines()
+    {
+        base.TransitionToNextLevel();
+    }
 }
