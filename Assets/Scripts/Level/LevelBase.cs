@@ -24,7 +24,7 @@ public class LevelBase : MonoBehaviour
     public CaptionedAudio levelIntro;
 
     [SerializeField]
-    private List<CaptionedAudio> completionVoiceLines;
+    protected List<CaptionedAudio> completionVoiceLines;
 
     protected VoiceoverPlayback voiceover;
 
