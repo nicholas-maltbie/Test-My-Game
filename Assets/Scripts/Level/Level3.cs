@@ -89,7 +89,7 @@ public class Level3 : MonoBehaviour
             }
             else
             {
-                GameObject.FindFirstObjectByType<BasicPlayer>().jumpLimit = 999;
+                GameObject.FindFirstObjectByType<BasicPlayer>().jumpLimit = PlayerJumpFromStoryFlag.JumpsWhenBroken;
                 StartCoroutine(FixPlatformsInABit());
             }
         }
@@ -103,7 +103,7 @@ public class Level3 : MonoBehaviour
         }
         else if (clip == fixingDoubleJumpAudio)
         {
-            GameObject.FindFirstObjectByType<BasicPlayer>().jumpLimit = 1;
+            GameObject.FindFirstObjectByType<BasicPlayer>().jumpLimit = PlayerJumpFromStoryFlag.JumpsWhenFixed;
             voiceover.PlayCaptionedAudio(letsMoveOnAudio);
         }
         else if (clip == letsMoveOnAudio)
