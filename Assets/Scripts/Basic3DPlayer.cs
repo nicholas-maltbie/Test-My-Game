@@ -38,6 +38,10 @@ class Basic3DPlayer : MonoBehaviour
     /// </summary>
     private float rotateDiff = 0f;
 
+    private bool jumpQueued;
+    private float fallingTime;
+    private float coyoteTime = 0.25f;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -55,11 +59,6 @@ class Basic3DPlayer : MonoBehaviour
         playerControls["Jump"].performed -= OnJump_Callback;
     }
 
-    private void DoJump()
-    {
-        worldVelocity = jumpVelocity * Vector3.up;
-    }
-
     public void OnControllerColliderHit(ControllerColliderHit hit)
     {
         var horse = hit.gameObject.GetComponent<SecondHorse>();
@@ -73,7 +72,7 @@ class Basic3DPlayer : MonoBehaviour
     {
         if (characterController.isGrounded)
         {
-            DoJump();
+            jumpQueued = true;
         }
     }
 
@@ -118,11 +117,20 @@ class Basic3DPlayer : MonoBehaviour
 
         if (!characterController.isGrounded)
         {
+            fallingTime += Time.deltaTime;
             worldVelocity += Physics.gravity * Time.fixedDeltaTime;
         }
-        else if (Vector3.Dot(worldVelocity, Vector3.up) <= 0)
+        else if (characterController.isGrounded && Vector3.Dot(worldVelocity, Vector3.up) <= 0)
         {
-            worldVelocity = Vector3.zero;
+            // keep pushing into ground to maintain contact
+            worldVelocity = Vector3.down * 0.01f;
+            fallingTime = 0;
+        }
+
+        if ((characterController.isGrounded || fallingTime <= coyoteTime) && jumpQueued)
+        {
+            worldVelocity = Vector3.up * jumpVelocity;
+            jumpQueued = false;
         }
 
         characterController.Move((moveVelocity + worldVelocity) * Time.fixedDeltaTime);
