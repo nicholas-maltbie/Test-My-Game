@@ -5297,7 +5297,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1913738494431427388, guid: 9f765c25fec0db244ae1264a4abc27f9, type: 3}
       propertyPath: jumpHeight
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2130055854825515829, guid: 9f765c25fec0db244ae1264a4abc27f9, type: 3}
       propertyPath: m_LocalPosition.x
