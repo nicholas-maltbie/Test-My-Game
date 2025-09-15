@@ -3894,7 +3894,7 @@ GameObject:
   - component: {fileID: 1335794974}
   - component: {fileID: 1335794973}
   m_Layer: 0
-  m_Name: PatchNotes_BackgroundsSheet_9
+  m_Name: Slope Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

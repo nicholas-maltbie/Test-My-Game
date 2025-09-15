@@ -9,6 +9,12 @@ public class Level9 : LevelBase
 
     bool leverWasActuated = false;
 
+    public override void Start()
+    {
+        base.Start();
+        Physics2D.gravity = Vector2.down * 0.75f;
+    }
+
     public void OnLeverActuation()
     {
         if( !leverWasActuated )

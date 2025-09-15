@@ -135,7 +135,7 @@ public class BasicPlayer : MonoBehaviour
         var verticalComponent = Vector2.Dot(this.rb2d.linearVelocity, Up) * Up;
 
         // Adjust due to gravity influence.
-        if ((!OnGround || Sliding || timeSinceLastJump > JumpGracePeriod) && useGravity)
+        if ((!OnGround || Sliding || timeSinceLastJump <= JumpGracePeriod) && useGravity)
         {
             // If not on ground or sliding, apply gravity
             this.rb2d.linearVelocity += gravity * Time.fixedDeltaTime;
