@@ -62,7 +62,8 @@ public class Level2_5Jump : MonoBehaviour
         BasicPlayer player = GameObject.FindFirstObjectByType<BasicPlayer>();
         player.useGravity = StoryFlags.GravityBugFixed;
 
-        player.OnDoubleJump.AddListener(this.OnDoubleJump);
+        // This is out of scope for now lol.
+        // player.OnDoubleJump.AddListener(this.OnDoubleJump);
     }
 
     public void OnDestroy()
