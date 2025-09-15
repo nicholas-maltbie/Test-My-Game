@@ -58,14 +58,12 @@ public class Level4 : MonoBehaviour
 
     public void TransitionToNextLevel()
     {
-        if (joshAudioCompleted && !levelTransferQueued)
+        if (joshAudioCompleted)
         {
             Transition.ToScene(level5.SceneName);
         }
-        else
-        {
-            levelTransferQueued = true;
-        }
+
+        levelTransferQueued = true;
     }
 
     private void OnAudioCompleted(CaptionedAudio clip)
@@ -83,7 +81,7 @@ public class Level4 : MonoBehaviour
             joshAudioCompleted = true;
             if (levelTransferQueued)
             {
-                TransitionToNextLevel();
+                Transition.ToScene(level5.SceneName);
             }
         }
     }
